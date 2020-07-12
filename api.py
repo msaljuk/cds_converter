@@ -1,10 +1,13 @@
 from cds_pdf_scraper import runPDFScraper
 from flask import Flask, request, send_from_directory, render_template
 import os 
+import logging
 
 CURRENT_DIRECTORY = os.path.dirname(os.path.realpath(__file__))
 
 app = Flask(__name__)
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
 
 @app.route('/', methods=['GET'])
 def home():

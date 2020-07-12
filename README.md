@@ -2,7 +2,7 @@
 A PDF to Excel Converter for US College/University Common Data Sets
 
 ### Prerequisites
-To run this app, you will need to have Python3 and pip installed on your local machine. You will need to have a [Java JDK](https://www.oracle.com/java/technologies/javase-jdk14-downloads.html) installed since one of the modules requires it. 
+To run this app, you will need to have Python3 and pip installed on your local machine. You will also need to have a [Java JDK](https://www.oracle.com/java/technologies/javase-jdk14-downloads.html) installed since one of the modules requires it. 
 
 
 ### Running the App

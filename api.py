@@ -19,4 +19,5 @@ def convert():
     else:
         return "<h1>" + response['status'] + "</h1>"
 
-app.run()
+if __name__ == '__main__':
+    app.run(debug=True)

@@ -1,6 +1,7 @@
 from cds_pdf_scraper import runPDFScraper
 from flask import Flask, request, send_from_directory, render_template
 import os 
+import sys
 import logging
 
 CURRENT_DIRECTORY = os.path.dirname(os.path.realpath(__file__))

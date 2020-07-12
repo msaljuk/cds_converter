@@ -5,7 +5,6 @@ import os
 CURRENT_DIRECTORY = os.path.dirname(os.path.realpath(__file__))
 
 app = Flask(__name__)
-app.config["DEBUG"] = True
 
 @app.route('/', methods=['GET'])
 def home():
@@ -20,4 +19,6 @@ def convert():
     else:
         return "<h1>" + response['status'] + "</h1>"
 
-app.run()
+if __name__ == '__main__':
+    # Threaded option to enable multiple instances for multiple user access support
+    app.run(threaded=True, port=5000)

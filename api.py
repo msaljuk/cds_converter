@@ -1,10 +1,13 @@
 from cds_pdf_scraper import runPDFScraper
 from flask import Flask, request, send_from_directory, render_template
 import os 
+import logging
 
 CURRENT_DIRECTORY = os.path.dirname(os.path.realpath(__file__))
 
 app = Flask(__name__)
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
 
 @app.route('/', methods=['GET'])
 def home():
@@ -20,4 +23,5 @@ def convert():
         return "<h1>" + response['status'] + "</h1>"
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Threaded option to enable multiple instances for multiple user access support
+    app.run(threaded=True, port=5000)
